@@ -6,6 +6,7 @@ SRC_URI = "git://git.yoctoproject.org/pseudo \
            file://fallback-group \
            file://moreretries.patch \
            file://toomanyfiles.patch \
+	   file://Fix_build_with_gcc10.patch \
            "
 
 SRCREV = "3fa7c853e0bcd6fe23f7524c2a3c9e3af90901c3"
