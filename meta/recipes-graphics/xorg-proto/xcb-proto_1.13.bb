@@ -11,10 +11,11 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d763b081cb10c223435b01e00dc0aba7 \
                     file://src/dri2.xml;beginline=2;endline=28;md5=f8763b13ff432e8597e0d610cf598e65"
 
-SRC_URI = "http://xcb.freedesktop.org/dist/${BP}.tar.bz2"
+SRC_URI = "http://xcb.freedesktop.org/dist/${BP}.tar.bz2;name=origin \
+          file://Use_math_gcd.patch"
 
-SRC_URI[md5sum] = "abe9aa4886138150bbc04ae4f29b90e3"
-SRC_URI[sha256sum] = "7b98721e669be80284e9bbfeab02d2d0d54cd11172b72271e47a2fe875e2bde1"
+SRC_URI[origin.md5sum] = "abe9aa4886138150bbc04ae4f29b90e3"
+SRC_URI[origin.sha256sum] = "7b98721e669be80284e9bbfeab02d2d0d54cd11172b72271e47a2fe875e2bde1"
 
 inherit autotools pkgconfig
 
