@@ -1,0 +1,24 @@
+Index: git/gold/descriptors.cc
+===================================================================
+--- git.orig/gold/descriptors.cc
++++ git/gold/descriptors.cc
+@@ -26,6 +26,7 @@
+ #include <cstdio>
+ #include <cstring>
+ #include <fcntl.h>
++#include <string>
+ #include <unistd.h>
+ 
+ #include "debug.h"
+Index: git/gold/errors.h
+===================================================================
+--- git.orig/gold/errors.h
++++ git/gold/errors.h
+@@ -26,6 +26,7 @@
+ #include <cstdarg>
+ 
+ #include "gold-threads.h"
++#include <string>
+ 
+ namespace gold
+ {
