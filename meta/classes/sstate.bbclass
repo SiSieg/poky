@@ -769,7 +769,8 @@ python sstate_sign_package () {
 # Will be run from within SSTATE_INSTDIR.
 #
 sstate_unpack_package () {
-	tar -xvzf ${SSTATE_PKG}
+	#tar -xvzf ${SSTATE_PKG}
+        /usr/bin/bsdtar -xvzf ${SSTATE_PKG}
 	# update .siginfo atime on local/NFS mirror
 	[ -w ${SSTATE_PKG}.siginfo ] && [ -h ${SSTATE_PKG}.siginfo ] && touch -a ${SSTATE_PKG}.siginfo
 	# Use "! -w ||" to return true for read only files
