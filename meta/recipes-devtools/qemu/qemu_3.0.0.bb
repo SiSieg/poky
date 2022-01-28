@@ -25,7 +25,10 @@ SRC_URI = "https://download.qemu.org/${BPN}-${PV}.tar.xz \
            file://CVE-2018-17958.patch \
            file://CVE-2018-17962.patch \
            file://CVE-2018-17963.patch \
-           "
+           file://linux-user-assume-__NR_gettid-always-exists.patch \
+           file://linux-user-remove-host-stime-syscall.patch \
+	   file://linux-user-rename-gettid-to-sys_gettid-to-avoid-clas.patch \
+	   "
 UPSTREAM_CHECK_REGEX = "qemu-(?P<pver>\d+(\.\d+)+)\.tar"
 
 SRC_URI_append_class-native = " \
