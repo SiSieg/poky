@@ -47,7 +47,8 @@ SRC_URI = "\
      file://CVE-2018-18606.patch \
      file://CVE-2018-18607.patch \
      file://gold_with_gcc10.patch \
-"
+     file://drop_redundant_program_name.patch \
+     "
 S  = "${WORKDIR}/git"
 
 do_configure_prepend () {

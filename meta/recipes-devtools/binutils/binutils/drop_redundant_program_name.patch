@@ -1,0 +1,39 @@
+Index: git/binutils/coffdump.c
+===================================================================
+--- git.orig/binutils/coffdump.c
++++ git/binutils/coffdump.c
+@@ -456,8 +456,6 @@ coff_dump (struct coff_ofile *ptr)
+     dump_coff_section (ptr->sections + i);
+ }
+ 
+-char * program_name;
+-
+ static void
+ show_usage (FILE *file, int status)
+ {
+Index: git/binutils/srconv.c
+===================================================================
+--- git.orig/binutils/srconv.c
++++ git/binutils/srconv.c
+@@ -1687,8 +1687,6 @@ prescan (struct coff_ofile *otree)
+     }
+ }
+ 
+-char *program_name;
+-
+ ATTRIBUTE_NORETURN static void
+ show_usage (FILE *ffile, int status)
+ {
+Index: git/binutils/sysdump.c
+===================================================================
+--- git.orig/binutils/sysdump.c
++++ git/binutils/sysdump.c
+@@ -633,8 +633,6 @@ module (void)
+     }
+ }
+ 
+-char *program_name;
+-
+ ATTRIBUTE_NORETURN static void
+ show_usage (FILE *ffile, int status)
+ {
