@@ -64,14 +64,14 @@ do_prep_locale_tree() {
 	treedir=${WORKDIR}/locale-tree
 	rm -rf $treedir
 	mkdir -p $treedir/${base_bindir} $treedir/${base_libdir} $treedir/${datadir} $treedir/${localedir}
-	tar -cf - -C ${LOCALETREESRC}${datadir} -p i18n | tar -xf - -C $treedir/${datadir}
+	/usr/bin/bsdtar -cf - -C ${LOCALETREESRC}${datadir} -p i18n | /usr/bin/bsdtar -xf - -C $treedir/${datadir}
 	# unzip to avoid parsing errors
 	for i in $treedir/${datadir}/i18n/charmaps/*gz; do 
 		gunzip $i
 	done
-	tar -cf - -C ${LOCALETREESRC}${base_libdir} -p . | tar -xf - -C $treedir/${base_libdir}
+	/usr/bin/bsdtar -cf - -C ${LOCALETREESRC}${base_libdir} -p . | /usr/bin/bsdtar -xf - -C $treedir/${base_libdir}
 	if [ -f ${STAGING_DIR_NATIVE}${prefix_native}/lib/libgcc_s.* ]; then
-		tar -cf - -C ${STAGING_DIR_NATIVE}/${prefix_native}/${base_libdir} -p libgcc_s.* | tar -xf - -C $treedir/${base_libdir}
+		/usr/bin/bsdtar -cf - -C ${STAGING_DIR_NATIVE}/${prefix_native}/${base_libdir} -p libgcc_s.* | /usr/bin/bsdtar -xf - -C $treedir/${base_libdir}
 	fi
 	install -m 0755 ${LOCALETREESRC}${bindir}/localedef $treedir/${base_bindir}
 }
@@ -81,7 +81,7 @@ do_collect_bins_from_locale_tree() {
 
 	parent=$(dirname ${localedir})
 	mkdir -p ${PKGD}/$parent
-	tar -cf - -C $treedir/$parent -p $(basename ${localedir}) | tar -xf - -C ${PKGD}$parent
+	/usr/bin/bsdtar -cf - -C $treedir/$parent -p $(basename ${localedir}) | /usr/bin/bsdtar -xf - -C ${PKGD}$parent
 }
 
 inherit qemu
