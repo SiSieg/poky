@@ -1,0 +1,15 @@
+Index: syslinux-6.03/com32/lib/getopt_long.c
+===================================================================
+--- syslinux-6.03.orig/com32/lib/getopt_long.c
++++ syslinux-6.03/com32/lib/getopt_long.c
+@@ -13,8 +13,8 @@
+ #include <string.h>
+ #include <getopt.h>
+ 
+-char *optarg;
+-int optind, opterr, optopt;
++extern char *optarg;
++extern int optind, opterr, optopt;
+ static struct getopt_private_state {
+ 	const char *optptr;
+ 	const char *last_optstring;

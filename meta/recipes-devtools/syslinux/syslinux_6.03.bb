@@ -25,6 +25,7 @@ SRC_URI = "${KERNELORG_MIRROR}/linux/utils/boot/syslinux/syslinux-${PV}.tar.xz \
            file://0011-mk-MMD-does-not-take-any-arguments.patch \
            file://syslinux-6.03-sysmacros.patch \
            file://ftbfs_with_GCC10.patch \
+           file://fix_gcc10_multiple_definition.patch \
            "
 
 SRC_URI[md5sum] = "92a253df9211e9c20172796ecf388f13"
