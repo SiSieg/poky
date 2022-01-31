@@ -1,0 +1,26 @@
+Index: syslinux-6.03/com32/gpllib/memory.c
+===================================================================
+--- syslinux-6.03.orig/com32/gpllib/memory.c
++++ syslinux-6.03/com32/gpllib/memory.c
+@@ -25,7 +25,7 @@
+ #include <string.h>
+ #include <memory.h>
+ 
+-const char *const e820_types[] = {
++extern const char *const e820_types[] = {
+     "usable",
+     "reserved",
+     "ACPI reclaim",
+Index: syslinux-6.03/com32/modules/meminfo.c
+===================================================================
+--- syslinux-6.03.orig/com32/modules/meminfo.c
++++ syslinux-6.03/com32/modules/meminfo.c
+@@ -29,7 +29,7 @@ struct e820_data {
+     uint32_t extattr;
+ } __attribute__ ((packed));
+ 
+-static const char *const e820_types[] = {
++extern static const char *const e820_types[] = {
+     "usable",
+     "reserved",
+     "ACPI reclaim",
