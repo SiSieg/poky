@@ -12,6 +12,7 @@ PROVIDES = "virtual/librpc"
 SRC_URI = "${SOURCEFORGE_MIRROR}/${BPN}/${BP}.tar.bz2 \
            file://libtirpc-1.0.4-rc1.patch \
            file://musl.patch \
+	   file://fix_build_with_gcc10.patch \
            "
 
 SRC_URI[md5sum] = "f8403a10695348854e71d525c4db5931"
