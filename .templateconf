@@ -1,2 +1,3 @@
 # Template settings
-TEMPLATECONF=${TEMPLATECONF:-meta-poky/conf}
+#TEMPLATECONF=${TEMPLATECONF:-meta-poky/conf}
+TEMPLATECONF=${TEMPLATECONF:-../meta-pcm058-ksp30-atb-ptu5-solo/conf}
