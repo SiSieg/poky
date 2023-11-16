@@ -27,7 +27,12 @@ import os.path
 import sys
 import warnings
 from bb.compat import total_ordering
-from collections import Mapping
+
+if sys.version_info[:2] >= (3, 8):
+    from collections.abc import Mapping, MutableMapping
+else:
+    from collections import Mapping, MutableMapping
+
 import sqlite3
 
 sqlversion = sqlite3.sqlite_version_info
@@ -44,7 +49,7 @@ if hasattr(sqlite3, 'enable_shared_cache'):
 
 
 @total_ordering
-class SQLTable(collections.MutableMapping):
+class SQLTable(MutableMapping):
     """Object representing a table/domain in the database"""
     def __init__(self, cachefile, table):
         self.cachefile = cachefile
